@@ -1,6 +1,6 @@
-# Δημιουργία και Ενορχήστρωση Δύο Containers (Nginx και Redis) με τη Χρήση Docker Compose και Kubernetes
+# Δημιουργία και Ενορχήστρωση Δύο Containers με τη Χρήση Docker Compose και Kubernetes
 
-## 1. Τι Έκανα
+## 1. Επεξήγηση
 Αυτό το project περιλαμβάνει τη δημιουργία δύο containers: ένα για Nginx και ένα για Redis. Ο στόχος είναι να χρησιμοποιηθούν τόσο ανεξάρτητα όσο και μέσω Docker Compose ή Kubernetes για μέγιστη ευελιξία.
 
 ### **Nginx**
@@ -27,7 +27,7 @@
 
 ---
 
-## 2. Τι Πρέπει να Κάνει ο Χρήστης
+## 2. Οδηγίες Χρήσης και Εκτέλεσης
 
 ### **Χρήση με Docker Compose**
 1. Κατεβάστε το project από το GitHub:

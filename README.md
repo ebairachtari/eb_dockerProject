@@ -85,11 +85,11 @@ t# Δημιουργία και Ενορχήστρωση Δύο Containers με �
 
 5. Πρόσβαση στο **Redis**:
    Υπάρχουν δύο επιλογές για πρόσβαση:
-   - **Εσωτερικά μέσω του container**:
+   - Εσωτερικά μέσω του container:
      ```bash
      docker exec -it compose-redis redis-cli
      ```
-   - **Από το εξωτερικό σύστημα (με εγκατεστημένο `redis-cli`)**:
+   - Εξωτερικά, με εγκατεστημένο `redis-cli`:
      ```bash
      redis-cli -h 127.0.0.1 -p 6380
      ```
@@ -134,13 +134,12 @@ t# Δημιουργία και Ενορχήστρωση Δύο Containers με �
 
 4. Πρόσβαση στο **Redis**:
    Υπάρχουν δύο επιλογές για πρόσβαση:
-   - **Εσωτερικά μέσω του Minikube cluster**:
+   - Εσωτερικά μέσω του Minikube cluster:
      ```bash
      kubectl exec -it <redis-pod-name> -- redis-cli
      ```
      > Αντικαταστήστε το `<redis-pod-name>` με το όνομα του Pod που πήρτε από την εντολή `kubectl get pods`.
-
-   - **Από το εξωτερικό σύστημα (με εγκατεστημένο `redis-cli`)**:
+   - Εξωτερικά, με εγκατεστημένο `redis-cli`:
      ```bash
      redis-cli -h <Minikube_IP> -p <NodePort>
      ```

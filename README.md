@@ -54,7 +54,6 @@ t# Δημιουργία και Ενορχήστρωση Δύο Containers με �
      ```bash
      docker exec -it redis-container redis-cli
      ```
-
    - Δοκιμάστε:
      ```bash
      get hello
@@ -128,3 +127,8 @@ t# Δημιουργία και Ενορχήστρωση Δύο Containers με �
      kubectl exec -it <redis-pod-name> -- redis-cli
      ```
      > Αντικαταστήστε το `<redis-pod-name>` με το όνομα του Pod που πήρτε από την εντολή `kubectl get pods`.
+   - Δοκιμάστε:
+     ```bash
+     get hello
+     get welcome
+     ```

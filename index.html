@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #555;
+        }
+        #countdown {
+            margin-top: 20px;
+        }
+        #timer {
+            font-size: 2em;
+            font-weight: bold;
+            color: #ff5722;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Project Containers</h1>
+    <p>Orchestration with Minikube & Kubernetes made by Evgenia Bairachtari</p>
+    <p>This is the first container for Nginx!</p>
+
+    <div id="countdown">
+        <h2>Time until the next container for Redis:</h2>
+        <p id="timer">00:00:00</p>
+    </div>
+
+    <script>
+        function startCountdown(durationInSeconds) {
+            const timerElement = document.getElementById('timer');
+            let remainingTime = durationInSeconds;
+
+            const interval = setInterval(() => {
+                const hours = Math.floor(remainingTime / 3600);
+                const minutes = Math.floor((remainingTime % 3600) / 60);
+                const seconds = remainingTime % 60;
+
+                timerElement.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+                if (remainingTime <= 0) {
+                    clearInterval(interval);
+                    timerElement.textContent = "Time for Redis!";
+                }
+
+                remainingTime -= 1;
+            }, 1000);
+        }
+        startCountdown(10);
+    </script>
+</body>
+</html>

@@ -55,7 +55,7 @@
    - Δοκιμάστε:
      ```bash
      get hello
-     get muchi
+     get welcome
      ```
 
 ---
@@ -88,7 +88,7 @@
    - Δοκιμάστε:
      ```bash
      get hello
-     get muchi
+     get welcome
      ```
 
 ---

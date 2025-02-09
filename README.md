@@ -142,6 +142,6 @@ t# Δημιουργία και Ενορχήστρωση Δύο Containers με �
 
    - **Από το εξωτερικό σύστημα (με εγκατεστημένο `redis-cli`)**:
      ```bash
-     minikube ip
+     redis-cli -h <Minikube_IP> -p <NodePort>
      ```
-     > Χρησιμοποίηστε την IP και την θύρα (`nodePort`) που εμφανίζεται στο `kubectl get services`: redis-cli -h <Minikube_IP> -p <NodePort>
+     > Χρησιμοποίηστε την IP και την θύρα (`nodePort`) που εμφανίζεται στο `kubectl get services`.

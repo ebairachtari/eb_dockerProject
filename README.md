@@ -9,21 +9,15 @@
 
 ### **Nginx**
 - Βασίστηκα στο default image `nginx:latest`.
-- Δημιούργησα ένα custom Dockerfile για να αντικαταστήσω το default HTML με το δικό μου:
-  ```dockerfile
-  FROM nginx:latest
-  COPY ./index.html /usr/share/nginx/html/index.html
-  ```
-- Το custom image ανέβηκε στο DockerHub: `ebairachtari/nginx-custom:latest`.
+- Δημιούργησα ένα custom Dockerfile για να αντικαταστήσω το default HTML με το δικό μου.
+
+  Το custom image ανέβηκε στο DockerHub: `ebairachtari/nginx-custom:latest`.
 
 ### **Redis**
 - Βασίστηκα στο default image `redis:latest`.
 - Δημιούργησα ένα custom Dockerfile για να προσθέσω το δικό μου αρχείο δεδομένων:
-  ```dockerfile
-  FROM redis:latest
-  COPY dump.rdb /data/dump.rdb
-  ```
-- Το custom image ανέβηκε στο DockerHub: `ebairachtari/custom-redis:latest`.
+
+  Το custom image ανέβηκε στο DockerHub: `ebairachtari/custom-redis:latest`.
 
 ### **Kubernetes**
 - Δημιούργησα YAML αρχεία για την εκτέλεση των containers μέσω Kubernetes:

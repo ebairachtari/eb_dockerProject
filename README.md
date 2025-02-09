@@ -57,7 +57,6 @@
    - Δοκιμάστε:
      ```bash
      get hello
-     get welcome
      ```
 
 ---

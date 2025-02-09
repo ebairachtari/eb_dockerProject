@@ -84,14 +84,9 @@ t# Δημιουργία και Ενορχήστρωση Δύο Containers με �
    - Ανοίξτε τον browser και επισκεφθείτε: [http://localhost:8081](http://localhost:8081).
 
 5. Πρόσβαση στο **Redis**:
-   Υπάρχουν δύο επιλογές για πρόσβαση:
-   - Εσωτερικά μέσω του container:
+   - Εκτελέστε:
      ```bash
      docker exec -it compose-redis redis-cli
-     ```
-   - Εξωτερικά, με εγκατεστημένο `redis-cli`:
-     ```bash
-     redis-cli -h 127.0.0.1 -p 6380
      ```
    - Δοκιμάστε:
      ```bash
@@ -129,14 +124,8 @@ t# Δημιουργία και Ενορχήστρωση Δύο Containers με �
      ```
 
 4. Πρόσβαση στο **Redis**:
-   Υπάρχουν δύο επιλογές για πρόσβαση:
-   - Εσωτερικά μέσω του Minikube cluster:
+   - Εκτελέστε:
      ```bash
      kubectl exec -it <redis-pod-name> -- redis-cli
      ```
      > Αντικαταστήστε το `<redis-pod-name>` με το όνομα του Pod που πήρτε από την εντολή `kubectl get pods`.
-   - Εξωτερικά, με εγκατεστημένο `redis-cli`:
-     ```bash
-     redis-cli -h <Minikube_IP> -p <NodePort>
-     ```
-     > Χρησιμοποίηστε την IP και την θύρα (`nodePort`) που εμφανίζεται στο `kubectl get services`.

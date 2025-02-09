@@ -27,8 +27,6 @@
 ### **Docker Compose**
 - Δημιούργησα το αρχείο `docker-compose.yaml` για να εκτελούνται τα containers με μία μόνο εντολή.
 
----
-
 ## 3. Τρόποι εκτέλεσης
 
 ### **Χρήση με Docker Compose**

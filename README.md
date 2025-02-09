@@ -59,7 +59,7 @@
      get hello
      ```
 
----
+  ---
 
 ### **Χρήση με Docker Compose**
 1. Κατεβάστε το project από το GitHub:
@@ -91,7 +91,7 @@
      get welcome
      ```
      
----
+  ---
 
 ### **Χρήση με Kubernetes (Minikube)**
 1. Ξεκινήστε το Minikube:

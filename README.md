@@ -2,7 +2,7 @@
 
 ## 1. Απαιτήσεις Συστήματος
 Για να εκτελέσετε το project, βεβαιωθείτε ότι έχετε εγκαταστήσει:
-- Docker Desktop (ή το Docker CLI) και ενεργοποιήστε το WSL 2 αν χρησιμοποιείτε Windows.
+- Docker Desktop (ή το Docker CLI) και ενεργοποιήστε το WSL 2 αν χρησιμοποιείτε Windows. 
 - Git
 - (Προαιρετικά) Minikube για Kubernetes.
 

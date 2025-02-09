@@ -72,7 +72,7 @@
 2. Εκτελέστε τα containers:
    - **Nginx**:
      ```bash
-     docker run -d -p 8080:80 ebairachtari/nginx-custom:latest
+     run -d --name nginx-container -p 8080:80 ebairachtari/nginx-custom:latest
      ```
    - **Redis**:
      ```bash

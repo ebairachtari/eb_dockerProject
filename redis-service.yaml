@@ -7,6 +7,6 @@ spec:
   ports:
     - port: 6379
       targetPort: 6379
-      nodePort: 30079 # (Μπορείς να αφήσεις το Kubernetes να διαλέξει αυτόματα)
+      nodePort: 6381
   selector:
     app: redis

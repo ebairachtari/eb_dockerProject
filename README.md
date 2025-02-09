@@ -83,17 +83,22 @@ t# Δημιουργία και Ενορχήστρωση Δύο Containers με �
 4. Πρόσβαση στο **Nginx**:
    - Ανοίξτε τον browser και επισκεφθείτε: [http://localhost:8081](http://localhost:8081).
 
-5. Πρόσβαση στο **Redis**:
-   - Εκτελέστε:
+5. **Πρόσβαση στο Redis**:
+   Υπάρχουν δύο επιλογές για πρόσβαση:
+   - **Εσωτερικά μέσω του container**:
      ```bash
      docker exec -it compose-redis redis-cli
+     ```
+   - **Από το εξωτερικό σύστημα (με εγκατεστημένο `redis-cli`)**:
+     ```bash
+     redis-cli -h 127.0.0.1 -p 6380
      ```
    - Δοκιμάστε:
      ```bash
      get hello
      get welcome
      ```
-
+     
 ---
 
 ### **Χρήση με Kubernetes (Minikube)**
@@ -127,19 +132,19 @@ t# Δημιουργία και Ενορχήστρωση Δύο Containers με �
      minikube ip
      ```
 
-4. Πρόσβαση στο Redis:
-   - Εκτελέστε:
+4. **Πρόσβαση στο Redis**:
+   Υπάρχουν δύο επιλογές για πρόσβαση:
+   - **Εσωτερικά μέσω του Minikube cluster**:
      ```bash
      kubectl exec -it <redis-pod-name> -- redis-cli
      ```
-     ή
-     ```bash
-     redis-cli -h <Minikube_IP> -p 6381
-     ```
-     
-   - Δοκιμάστε:
-     ```bash
-     get hello
-     get welcome
-     ```
+     > Αντικαταστήστε το `<redis-pod-name>` με το όνομα του Pod που πήρτε από την εντολή `kubectl get pods`.
 
+   - **Από το εξωτερικό σύστημα (με εγκατεστημένο `redis-cli`)**:
+     ```bash
+     minikube ip
+     ```
+     > Χρησιμοποίηστε την IP και την θύρα (`nodePort`) που εμφανίζεται στο `kubectl get services`: redis-cli -h <Minikube_IP> -p <NodePort>
+
+
+Αυτό το κείμενο καλύπτει και τα δύο σενάρια (εσωτερικό και εξωτερικό). Θέλεις να το κάνω πιο αναλυτικό ή είσαι εντάξει με αυτό;

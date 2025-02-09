@@ -5,8 +5,8 @@ services:
     container_name: compose-nginx
     ports:
       - "8081:80" # Διαφορετική πόρτα για να μην έρχεται σε σύγκρουση
-    volumes:
-      - ./nginx-data:/usr/share/nginx/html
+    # volumes:
+    #  - ./nginx-data:/usr/share/nginx/html
     restart: always
 
   redis:

@@ -131,6 +131,11 @@ t# Δημιουργία και Ενορχήστρωση Δύο Containers με �
      ```bash
      kubectl exec -it <redis-pod-name> -- redis-cli
      ```
+     ή
+     ```bash
+     redis-cli -h <Minikube_IP> -p 6381
+     ```
+     
    - Δοκιμάστε:
      ```bash
      get hello

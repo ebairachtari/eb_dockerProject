@@ -81,7 +81,7 @@ t# Δημιουργία και Ενορχήστρωση Δύο Containers με �
    ```
 
 4. Πρόσβαση στο **Nginx**:
-   - Ανοίξτε τον browser και επισκεφθείτε: [http://localhost:8080](http://localhost:8080).
+   - Ανοίξτε τον browser και επισκεφθείτε: [http://localhost:8081](http://localhost:8081).
 
 5. Πρόσβαση στο **Redis**:
    - Εκτελέστε:

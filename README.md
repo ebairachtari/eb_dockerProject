@@ -1,8 +1,12 @@
 # Δημιουργία και Ενορχήστρωση Δύο Containers με τη Χρήση Docker Compose και Kubernetes
 
-## 1. Επεξήγηση
-Αυτό το project περιλαμβάνει τη δημιουργία δύο containers: ένα για Nginx και ένα για Redis. Ο στόχος είναι να χρησιμοποιηθούν τόσο ανεξάρτητα όσο και μέσω Docker Compose ή Kubernetes για μέγιστη ευελιξία.
+## 1. Απαιτήσεις Συστήματος
+Για να εκτελέσετε το project, βεβαιωθείτε ότι έχετε εγκαταστήσει:
+- Docker Desktop (ή το Docker CLI) και ενεργοποιήστε το WSL 2 αν χρησιμοποιείτε Windows.
+- Git
+- (Προαιρετικά) Minikube για Kubernetes.
 
+## 2. Επεξήγηση
 ### **Nginx**
 - Βασίστηκα στο default image `nginx:latest`.
 - Δημιούργησα ένα custom Dockerfile για να αντικαταστήσω το default HTML με το δικό μου.
@@ -25,7 +29,7 @@
 
 ---
 
-## 2. Οδηγίες Χρήσης και Εκτέλεσης
+## 3. Τρόποι εκτέλεσης
 
 ### **Χρήση με Docker Compose**
 1. Κατεβάστε το project από το GitHub:

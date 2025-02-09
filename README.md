@@ -39,7 +39,7 @@ t# Δημιουργία και Ενορχήστρωση Δύο Containers με �
 2. Εκτελέστε τα containers:
    - **Nginx**:
      ```bash
-     run -d --name nginx-container -p 8080:80 ebairachtari/nginx-custom:latest
+     docker run -d --name nginx-container -p 8080:80 ebairachtari/nginx-custom:latest
      ```
    - **Redis**:
      ```bash

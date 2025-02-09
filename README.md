@@ -85,7 +85,7 @@
 4. Πρόσβαση στο Redis:
    - Εκτελέστε:
      ```bash
-     docker exec -it compose-redis redis-cli
+     docker exec -it redis-container redis-cli
      ```
 
    - Δοκιμάστε:

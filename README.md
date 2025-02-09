@@ -1,4 +1,4 @@
-t# Δημιουργία και Ενορχήστρωση Δύο Containers με τη Χρήση Docker Compose και Kubernetes
+# Δημιουργία και Ενορχήστρωση Δύο Containers με τη Χρήση Docker Compose και Kubernetes
 
 ## 1. Απαιτήσεις Συστήματος
 Για να εκτελέσετε το project, βεβαιωθείτε ότι έχετε εγκαταστήσει:

@@ -82,11 +82,12 @@
 3. Πρόσβαση στο **Nginx**:
    - Ανοίξτε τον browser και επισκεφθείτε: [http://localhost:8080](http://localhost:8080).
 
-4. Πρόσβαση στο **Redis**:
+4. Πρόσβαση στο Redis:
    - Εκτελέστε:
      ```bash
-    docker exec -it compose-redis redis-cli
+     docker exec -it compose-redis redis-cli
      ```
+
    - Δοκιμάστε:
      ```bash
      get hello

@@ -125,6 +125,11 @@
      ```bash
      minikube service nginx-service
      ```
+    - Δοκιμάστε:
+     ```bash
+     get hello
+     get welcome
+     ```
 
 4. Πρόσβαση στο Redis:
    - Εκτελέστε:

@@ -106,10 +106,6 @@ t# Δημιουργία και Ενορχήστρωση Δύο Containers με �
    ```bash
    minikube start
    ```
-   ή
-   ```bash
-   minikube start --addons=default-storageclass --force
-   ```   
 
 3. Εγκαταστήστε τα αρχεία YAML:
    ```bash

@@ -87,6 +87,7 @@
      ```bash
     docker exec -it compose-redis redis-cli
      ```
+     
    - Δοκιμάστε:
      ```bash
      get hello

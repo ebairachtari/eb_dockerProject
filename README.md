@@ -1,4 +1,4 @@
-# Δημιουργία και Ενορχήστρωση Δύο Containers με τη Χρήση Docker Compose και Kubernetes
+t# Δημιουργία και Ενορχήστρωση Δύο Containers με τη Χρήση Docker Compose και Kubernetes
 
 ## 1. Απαιτήσεις Συστήματος
 Για να εκτελέσετε το project, βεβαιωθείτε ότι έχετε εγκαταστήσει:
@@ -29,39 +29,6 @@
 
 ## 3. Τρόποι εκτέλεσης
 
-### **Χρήση με Docker Compose**
-1. Κατεβάστε το project από το GitHub:
-   ```bash
-   git clone https://github.com/ebairachtari/eb_dockerProject
-   cd eb_dockerProject
-   ```
-
-2. Εκτελέστε την εντολή:
-   ```bash
-   docker-compose up -d
-   ```
-
-3. Ελέγξτε αν τα containers τρέχουν:
-   ```bash
-   docker ps
-   ```
-
-4. Πρόσβαση στο **Nginx**:
-   - Ανοίξτε τον browser και επισκεφθείτε: [http://localhost:8080](http://localhost:8080).
-
-5. Πρόσβαση στο **Redis**:
-   - Εκτελέστε:
-     ```bash
-     docker exec -it compose-redis redis-cli
-     ```
-   - Δοκιμάστε:
-     ```bash
-     get hello
-     get welcome
-     ```
-
----
-
 ### **Χρήση με Ανεξάρτητα Containers**
 1. Τραβήξτε τα images από το DockerHub:
    ```bash
@@ -88,6 +55,39 @@
      docker exec -it redis-container redis-cli
      ```
 
+   - Δοκιμάστε:
+     ```bash
+     get hello
+     get welcome
+     ```
+
+---
+
+### **Χρήση με Docker Compose**
+1. Κατεβάστε το project από το GitHub:
+   ```bash
+   git clone https://github.com/ebairachtari/eb_dockerProject
+   cd eb_dockerProject
+   ```
+
+2. Εκτελέστε την εντολή:
+   ```bash
+   docker-compose up -d
+   ```
+
+3. Ελέγξτε αν τα containers τρέχουν:
+   ```bash
+   docker ps
+   ```
+
+4. Πρόσβαση στο **Nginx**:
+   - Ανοίξτε τον browser και επισκεφθείτε: [http://localhost:8080](http://localhost:8080).
+
+5. Πρόσβαση στο **Redis**:
+   - Εκτελέστε:
+     ```bash
+     docker exec -it compose-redis redis-cli
+     ```
    - Δοκιμάστε:
      ```bash
      get hello

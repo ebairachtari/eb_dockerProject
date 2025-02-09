@@ -116,5 +116,15 @@
    kubectl get services
    ```
 
-4. Πρόσβαση:
-   - Ακολουθήστε τις οδηγίες για τις IP και τις θύρες που εμφανίζονται στα Services.
+3. Πρόσβαση στο **Nginx**:
+   - Εκτελέστε:
+     ```bash
+     minikube service nginx-service
+     ```
+
+4. Πρόσβαση στο Redis:
+   - Εκτελέστε:
+     ```bash
+     kubectl exec -it <redis-pod-name> -- redis-cli
+     ```
+

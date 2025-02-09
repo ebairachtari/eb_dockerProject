@@ -120,7 +120,6 @@ t# Δημιουργία και Ενορχήστρωση Δύο Containers με �
    - Εκτελέστε:
      ```bash
      minikube service nginx-service
-     minikube ip
      ```
 
 4. Πρόσβαση στο **Redis**:

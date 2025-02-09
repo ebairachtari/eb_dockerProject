@@ -125,15 +125,15 @@
      ```bash
      minikube service nginx-service
      ```
-    - Δοκιμάστε:
-     ```bash
-     get hello
-     get welcome
-     ```
 
 4. Πρόσβαση στο Redis:
    - Εκτελέστε:
      ```bash
      kubectl exec -it <redis-pod-name> -- redis-cli
+     ```
+   - Δοκιμάστε:
+     ```bash
+     get hello
+     get welcome
      ```
 

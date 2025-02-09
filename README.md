@@ -101,8 +101,12 @@
    ```bash
    minikube start
    ```
+   ή
+   ```bash
+   minikube start --addons=default-storageclass --force
+   ```   
 
-2. Εγκαταστήστε τα αρχεία YAML:
+3. Εγκαταστήστε τα αρχεία YAML:
    ```bash
    kubectl apply -f nginx-deployment.yaml
    kubectl apply -f redis-deployment.yaml
@@ -110,7 +114,7 @@
    kubectl apply -f redis-service.yaml
    ```
 
-3. Ελέγξτε τα Pods και τα Services:
+4. Ελέγξτε τα Pods και τα Services:
    ```bash
    kubectl get pods
    kubectl get services

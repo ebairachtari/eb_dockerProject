@@ -124,13 +124,12 @@
      ```bash
      kubectl exec -it <redis-pod-name> -- redis-cli
      ```
-
-
----
-**Αναπτύχθηκε για εκπαιδευτικούς σκοπούς.**  
      > Αντικαταστήστε το `<redis-pod-name>` με το όνομα του Pod που πήρτε από την εντολή `kubectl get pods`.
    - Δοκιμάστε:
      ```bash
      set test "only for test"
      get test
      ```
+
+---
+**Αναπτύχθηκε για εκπαιδευτικούς σκοπούς.**  

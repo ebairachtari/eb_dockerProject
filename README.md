@@ -131,4 +131,3 @@ To run this project, ensure you have the following installed:
 ---
 
 > **Note:** This project was developed solely for educational purposes.
-```

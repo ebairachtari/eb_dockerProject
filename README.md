@@ -1,7 +1,3 @@
-Τέλειο! Πάμε τώρα να το μεταφράσουμε σε **καθαρά επαγγελματικό αγγλικό README**, ώστε να το βάλεις όπως είναι στο GitHub repo σου 👇
-
----
-
 ```markdown
 # Creating and Orchestrating Two Containers Using Docker Compose and Kubernetes
 

@@ -1,133 +1,152 @@
-# Creating and Orchestrating Two Containers Using Docker Compose and Kubernetes
+# Δημιουργία και Ενορχήστρωση Δύο Containers με τη Χρήση Docker Compose και Kubernetes
 
-## 1. System Requirements
-
-To run this project, ensure you have the following installed:
-
-- Docker Desktop (or Docker CLI). If you're using Windows, enable WSL 2.
+## 1. Απαιτήσεις Συστήματος
+Για να εκτελέσετε το project, βεβαιωθείτε ότι έχετε εγκαταστήσει:
+- Docker Desktop (ή το Docker CLI) και ενεργοποιήστε το WSL 2 αν χρησιμοποιείτε Windows. 
 - Git
-- Minikube for Kubernetes
+- Minikube για Kubernetes.
 
----
+## 2. Επεξήγηση
+### **Nginx**
+- Βασίστηκα στο default image nginx:latest.
+- Δημιούργησα ένα custom Dockerfile για να αντικαταστήσω το default HTML με το δικό μου.
+  - Το custom image ανέβηκε στο DockerHub: ebairachtari/nginx-custom:latest.
 
-## 2. Explanation
+### **Redis**
+- Βασίστηκα στο default image redis:latest.
+- Δημιούργησα ένα custom Dockerfile για να προσθέσω το δικό μου αρχείο δεδομένων:
+  - Το custom image ανέβηκε στο DockerHub: ebairachtari/custom-redis:latest.
 
-### Nginx
+### **Kubernetes**
+- Δημιούργησα YAML αρχεία για την εκτέλεση των containers μέσω Kubernetes:
+  - nginx-deployment.yaml: Deployment για το Nginx.
+  - redis-deployment.yaml: Deployment για το Redis.
+  - nginx-service.yaml: Service για το Nginx.
+  - redis-service.yaml: Service για το Redis.
 
-- Based on the default `nginx:latest` image.  
-- A custom Dockerfile was created to replace the default HTML with custom content.  
-  - The custom image was pushed to DockerHub: `ebairachtari/nginx-custom:latest`.
+### **Docker Compose**
+- Δημιούργησα το αρχείο docker-compose.yaml για να εκτελούνται τα containers με μία μόνο εντολή.
 
-### Redis
+## 3. Τρόποι εκτέλεσης
 
-- Based on the default `redis:latest` image.  
-- A custom Dockerfile was created to include a custom data file.  
-  - The custom image was pushed to DockerHub: `ebairachtari/custom-redis:latest`.
-
-### Kubernetes
-
-- YAML files were created to deploy the containers via Kubernetes:
-  - `nginx-deployment.yaml`: Deployment for Nginx
-  - `redis-deployment.yaml`: Deployment for Redis
-  - `nginx-service.yaml`: Service for Nginx
-  - `redis-service.yaml`: Service for Redis
-
-### Docker Compose
-
-- A `docker-compose.yaml` file was created to launch both containers with a single command.
-
----
-
-## 3. Execution Methods
-
-### A. Using Standalone Containers
-
-1. Pull the images from DockerHub:
-   ```bash
+### **Χρήση με Ανεξάρτητα Containers**
+1. Τραβήξτε τα images από το DockerHub:
+   
+bash
    docker pull ebairachtari/nginx-custom:latest
    docker pull ebairachtari/custom-redis:latest
-   ```
 
-2. Run the containers:
-   ```bash
-   docker run -d --name nginx-container -p 8080:80 ebairachtari/nginx-custom:latest
-   docker run -d --name redis-container -p 6379:6379 -v redis-data:/data ebairachtari/custom-redis:latest
-   ```
 
-3. Access Nginx:  
-   Open your browser and visit [http://localhost:8080](http://localhost:8080)
+2. Εκτελέστε τα containers:
+   - **Nginx**:
+     
+bash
+     docker run -d --name nginx-container -p 8080:80 ebairachtari/nginx-custom:latest
 
-4. Access Redis:
-   ```bash
-   docker exec -it redis-container redis-cli
-   get hello
-   ```
+   - **Redis**:
+     
+bash
+     docker run -d --name redis-container -p 6379:6379 -v redis-data:/data ebairachtari/custom-redis:latest
 
----
 
-### B. Using Docker Compose
+3. Πρόσβαση στο **Nginx**:
+   - Ανοίξτε τον browser και επισκεφθείτε: [http://localhost:8080](http://localhost:8080).
 
-1. Clone the project from GitHub:
-   ```bash
+4. Πρόσβαση στο **Redis**:
+   - Εκτελέστε:
+     
+bash
+     docker exec -it redis-container redis-cli
+
+   - Δοκιμάστε:
+     
+bash
+     get hello
+
+
+  ---
+
+### **Χρήση με Docker Compose**
+1. Κατεβάστε το project από το GitHub:
+   
+bash
    git clone https://github.com/ebairachtari/eb_dockerProject
    cd eb_dockerProject
-   ```
 
-2. Run:
-   ```bash
+
+2. Εκτελέστε την εντολή:
+   
+bash
    docker-compose up -d
-   ```
 
-3. Verify containers are running:
-   ```bash
+
+3. Ελέγξτε αν τα containers τρέχουν:
+   
+bash
    docker ps
-   ```
 
-4. Access Nginx:  
-   Visit [http://localhost:8081](http://localhost:8081)
 
-5. Access Redis:
-   ```bash
-   docker exec -it compose-redis redis-cli
-   get welcome
-   ```
+4. Πρόσβαση στο **Nginx**:
+   - Ανοίξτε τον browser και επισκεφθείτε: [http://localhost:8081](http://localhost:8081).
 
----
+5. Πρόσβαση στο **Redis**:
+   - Εκτελέστε:
+     
+bash
+     docker exec -it compose-redis redis-cli
 
-### C. Using Kubernetes (Minikube)
+   - Δοκιμάστε:
+     
+bash
+     get welcome
 
-1. Start Minikube:
-   ```bash
+     
+  ---
+
+### **Χρήση με Kubernetes (Minikube)**
+1. Ξεκινήστε το Minikube:
+   
+bash
    minikube start
-   ```
 
-2. Apply the YAML files:
-   ```bash
+
+3. Εγκαταστήστε τα αρχεία YAML:
+   
+bash
    kubectl apply -f nginx-deployment.yaml
    kubectl apply -f redis-deployment.yaml
    kubectl apply -f nginx-service.yaml
    kubectl apply -f redis-service.yaml
-   ```
 
-3. Check pods and services:
-   ```bash
+
+4. Ελέγξτε τα Pods και τα Services:
+   
+bash
    kubectl get pods
    kubectl get services
-   ```
 
-4. Access Nginx:
-   ```bash
-   minikube service nginx-service
-   ```
 
-5. Access Redis:
-   ```bash
-   kubectl exec -it <redis-pod-name> -- redis-cli
-   set test "only for test"
-   get test
-   ```
-   > Replace `<redis-pod-name>` with the actual Pod name from `kubectl get pods`
+3. Πρόσβαση στο **Nginx**:
+   - Εκτελέστε:
+     
+bash
+     minikube service nginx-service
 
----
 
-> **Note:** This project was developed solely for educational purposes.
+4. Πρόσβαση στο **Redis**:
+   - Εκτελέστε:
+     
+bash
+     kubectl exec -it <redis-pod-name> -- redis-cli
+
+     > Αντικαταστήστε το <redis-pod-name> με το όνομα του Pod που πήρτε από την εντολή kubectl get pods.
+   - Δοκιμάστε:
+     
+bash
+     set test "only for test"
+     get test
+
+
+
+
+>*Αναπτύχθηκε αποκλειστικά για εκπαιδευτικούς σκοπούς.*

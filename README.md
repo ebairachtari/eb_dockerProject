@@ -32,22 +32,23 @@
 ### **Χρήση με Ανεξάρτητα Containers**
 1. Τραβήξτε τα images από το DockerHub:
    
-bash
+```bash
    docker pull ebairachtari/nginx-custom:latest
    docker pull ebairachtari/custom-redis:latest
-
+```
 
 2. Εκτελέστε τα containers:
    - **Nginx**:
      
-bash
+```bash
      docker run -d --name nginx-container -p 8080:80 ebairachtari/nginx-custom:latest
+```
 
    - **Redis**:
      
-bash
+```bash
      docker run -d --name redis-container -p 6379:6379 -v redis-data:/data ebairachtari/custom-redis:latest
-
+```
 
 3. Πρόσβαση στο **Nginx**:
    - Ανοίξτε τον browser και επισκεφθείτε: [http://localhost:8080](http://localhost:8080).
@@ -55,36 +56,37 @@ bash
 4. Πρόσβαση στο **Redis**:
    - Εκτελέστε:
      
-bash
+```bash
      docker exec -it redis-container redis-cli
+```
 
    - Δοκιμάστε:
      
-bash
+```bash
      get hello
-
+```
 
   ---
 
 ### **Χρήση με Docker Compose**
 1. Κατεβάστε το project από το GitHub:
    
-bash
+```bash
    git clone https://github.com/ebairachtari/eb_dockerProject
    cd eb_dockerProject
-
+```
 
 2. Εκτελέστε την εντολή:
    
-bash
+```bash
    docker-compose up -d
-
+```
 
 3. Ελέγξτε αν τα containers τρέχουν:
    
-bash
+```bash
    docker ps
-
+```
 
 4. Πρόσβαση στο **Nginx**:
    - Ανοίξτε τον browser και επισκεφθείτε: [http://localhost:8081](http://localhost:8081).
@@ -92,60 +94,60 @@ bash
 5. Πρόσβαση στο **Redis**:
    - Εκτελέστε:
      
-bash
+```bash
      docker exec -it compose-redis redis-cli
-
+```
    - Δοκιμάστε:
      
-bash
+```bash
      get welcome
-
+```
      
   ---
 
 ### **Χρήση με Kubernetes (Minikube)**
 1. Ξεκινήστε το Minikube:
    
-bash
+```bash
    minikube start
-
+```
 
 3. Εγκαταστήστε τα αρχεία YAML:
    
-bash
+```bash
    kubectl apply -f nginx-deployment.yaml
    kubectl apply -f redis-deployment.yaml
    kubectl apply -f nginx-service.yaml
    kubectl apply -f redis-service.yaml
-
+```
 
 4. Ελέγξτε τα Pods και τα Services:
    
-bash
+```bash
    kubectl get pods
    kubectl get services
-
+```
 
 3. Πρόσβαση στο **Nginx**:
    - Εκτελέστε:
      
-bash
+```bash
      minikube service nginx-service
-
+```
 
 4. Πρόσβαση στο **Redis**:
    - Εκτελέστε:
      
-bash
+```bash
      kubectl exec -it <redis-pod-name> -- redis-cli
-
+```
      > Αντικαταστήστε το <redis-pod-name> με το όνομα του Pod που πήρτε από την εντολή kubectl get pods.
    - Δοκιμάστε:
      
-bash
+```bash
      set test "only for test"
      get test
-
+```
 
 
 
